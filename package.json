@@ -1,0 +1,30 @@
+{
+  "name": "progressive",
+  "version": "1.0.0",
+  "description": "Project for my Progressive Web Apps course on Lynda.com/LinkedIn Learning",
+  "main": "app-server.js",
+  "scripts": {
+    "start": "node app-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/planetoftheweb/progressive.git"
+  },
+  "author": "Ray Villalobos",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-concat-css": "^0.3.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sw-precache": "^1.0.3",
+    "jquery": "^3.1.1",
+    "sw-precache": "^4.2.1"
+  },
+  "dependencies": {
+    "browserify": "^14.3.0",
+    "express": "^4.15.2",
+    "handlebars": "^4.0.5"
+  }
+}
