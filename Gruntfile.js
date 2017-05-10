@@ -24,6 +24,7 @@ module.exports = function(grunt) {
         },
         'sw-precache': {
             options: {
+                baseDir: 'app/build/',
                 cacheId: 'progressive-test-package',
                 workerFileName: 'sw.js',
                 verbose: true

@@ -5,6 +5,14 @@ var Handlebars = require('handlebars');
 $(function() {
     var topoffset = 50;
 
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('../../build/sw.js')
+            .then(function(){
+                console.log('Service Worker Active');
+            })
+    }
+
     $.getJSON('../../data/pets.json', function(data){
         $('.loader').fadeOut(1000);
         var slideshowTemplate = $('#slideshow-template').html();
@@ -16,12 +24,9 @@ $(function() {
         var appointmentTemplate = $('#appointments-template').html();
         var appointmentScript = Handlebars.compile(appointmentTemplate);
 
-
-
         $('#slideshow-content').append(slideshowScript(data));
         $('#adoption-content').append(adoptionScript(data));
         $('#appointments-content').append(appointmentScript(data));
-
 
         //Replace IMG inside carousels with background image
 
