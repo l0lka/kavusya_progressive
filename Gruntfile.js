@@ -14,10 +14,6 @@ module.exports = function(grunt) {
             js: {
                 files: ['app/js/app.js'],
                 tasks: ['browserify', 'concat_css']
-            },
-            css: {
-                files: ['app/css/app.css'],
-                tasks: ['concat_css']
             }
         },
         browserify: {

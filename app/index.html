@@ -77,6 +77,19 @@
                     Adoptions
                 </h2>
                 <p>Some text by topic. Click on photo for more information.</p>
+
+
+                <script id="adoption-template" type="text/x-handlebars-template">
+                    {{#each adoption}}
+                        <div class="col-md-2 col-sm-3 col-xs-4">
+                            <img class="img-circle" src="images/pets/{{filename}}_tn.jpg" alt="{{pet}} photo">
+                            <!-- column -->
+                        </div>
+                    {{/each}}
+                </script>
+                <div id="adoption-content"></div>
+
+
             </div>
             <!-- container -->
         </div>

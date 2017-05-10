@@ -10,7 +10,11 @@ $(function() {
         var slideshowTemplate = $('#slideshow-template').html();
         var slideshowScript = Handlebars.compile(slideshowTemplate);
 
+        var adoptionTemplate = $('#adoption-template').html();
+        var adoptionScript = Handlebars.compile(adoptionTemplate);
+
         $('#slideshow-content').append(slideshowScript(data));
+        $('#adoption-content').append(adoptionScript(data));
 
         //Replace IMG inside carousels with background image
 
@@ -21,7 +25,6 @@ $(function() {
         });
 
         //Activate carousel
-
         $('.carousel').carousel({
             pause: false
         })
