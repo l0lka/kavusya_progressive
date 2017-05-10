@@ -87,10 +87,45 @@
                 </script>
                 <div id="adoption-content"></div>
 
+            </div>
+            <!-- container -->
+        </div>
+        <!-- page adoption -->
+
+        <div class="page" id="appointments">
+            <div class="container">
+                <h2 class="page-headline">
+                    Appointments
+                </h2>
+                <p>Some text by topic. Click on photo for more information.</p>
+
+                <script id="appointments-template" type="text/x-handlebars-template">
+                    {{#each appointments}}
+                        <div class="appointment media openpetmodal"  data-toggle="modal" data-target="#wisdompetmodal" data-petname="{{pet}}" data-petbreed="{{breed}}" data-petowner="{{owner}}" data-petinfo="{{reason}}" data-petimage="{{filename}}">
+                            <div class="media-left media-top">
+                                <img src="images/pets/{{filename}}_tn.jpg" alt="{{pet}} photo" class="media-object appointment-img img-rounded">
+                            </div> <!-- media left media top -->
+                            <div class="media-body">
+                                <h3 class="media-heading appointment-heading">{{pet}}, <span class="appointment-breed">{{breed}}</span></h3>
+                                <div class="appointment-owner"><span class="appointment-owner-title">Owner: </span>
+                                <span class="appointment-owner-name">{{owner}}</span>
+                                </div>
+                                <div class="appointment-reason">{{reason}}</div>
+                            </div>
+                            <!-- media-body -->
+                        </div>
+                        <!-- appointment media openmodal -->
+                    {{/each}}
+                </script>
+
+                <div id="appointments-content"></div>
 
             </div>
             <!-- container -->
         </div>
+        <!-- page appointments -->
+
+
     </main>
 
     <div class="modal fade" id="wisdompetmodal" tabindex="-1" role="dialog" area-labelledby="petModal">
