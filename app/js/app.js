@@ -5,7 +5,27 @@ var Handlebars = require('handlebars');
 $(function() {
     var topoffset = 50;
 
-    $('.loader').fadeOut(1000);
+    $.getJSON('../../data/pets.json', function(data){
+        $('.loader').fadeOut(1000);
+        var slideshowTemplate = $('#slideshow-template').html();
+        var slideshowScript = Handlebars.compile(slideshowTemplate);
+
+        $('#slideshow-content').append(slideshowScript(data));
+
+        //Replace IMG inside carousels with background image
+
+        $('#slideshow .item img').each(function () {
+            var imgSrc = $(this).attr('src');
+            $(this).parent().css({'background-image': 'url(' + imgSrc + ')'});
+            $(this).remove();
+        });
+
+        //Activate carousel
+
+        $('.carousel').carousel({
+            pause: false
+        })
+    });
 
     $('.navbar-fixed-top').on('activate.bs.scrollspy', function () {
         var hash = $(this).find('li.active a').attr('href');
