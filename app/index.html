@@ -7,6 +7,12 @@
     <title>Progressive Web Apps</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/app.css">
+    <style>
+        .page, #slideshow {
+            height: 100vh;
+            background: gray;
+        }
+    </style>
 
 </head>
 <body>
@@ -38,16 +44,16 @@
                 <div class="collapse navbar-collapse" id="collapse">
                     <ul class="nav navbar-nav navbar-right">
 
-                        <li class="active"><a href="#slideshow">Slideshow</a></li>
-                        <li><a href="#adoption">Adoption</a></li>
-                        <li><a href="#appointments">Appointments</a></li>
+                        <li role="presentation" class="active"><a href="#slideshow">Slideshow</a></li>
+                        <li role="presentation"><a href="#adoption">Adoption</a></li>
+                        <li role="presentation"><a href="#appointments">Appointments</a></li>
 
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div id="slideshow-content">
+    <div id="slideshow">
 
     </div>
     <main>
