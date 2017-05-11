@@ -20,6 +20,24 @@ module.exports = function(grunt) {
             js: {
                 src: 'app/js/*.js',
                 dest: 'app/build/bundle.js'
+            },
+            css: {
+                files: "app/less/*.less",
+                tasks: ["less"]
+            }
+        },
+        less: {
+            // production config is also available
+            development: {
+                options: {
+                    // Specifies directories to scan for @import directives when parsing.
+                    // Default value is the directory of the source, which is probably what you want.
+                    paths: ["public/stylesheets/"]
+                },
+                files: {
+                    // compilation.css  :  source.less
+                    "app/build/css/app.css": "app/less/app.less"
+                }
             }
         },
         'sw-precache': {

@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600');
+@import url('https://fonts.googleapis.com/css?family=Lobster&amp;subset=cyrillic');
+
+@main-color1: #a91a1e; //red
+@main-color2: #fff; //white
+
+
+/**  Basic Page CSS **/
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lobster', cursive;
+  font-weight: 300;
+  margin: 0;
+}
+
+/**  Header Navigation **/
+
+header {
+  .navbar {
+    padding: 0;
+    transition: all .5s ease-out;
+  }
+
+  .navbar-default {
+    background-color: transparent;
+    border: none;
+
+    .navbar-nav {
+      a {
+        font-family: 'Lobster', cursive;
+        color: white;
+        padding: 5px 8px;
+
+        &:hover {
+          color: #EEC856;
+        }
+      }
+
+      .active a {
+        font-weight: 600;
+        color: #EEC856;
+        background: transparent;
+        border-bottom: 4px solid #EEC856;
+        text-shadow: none;
+
+        &:hover {
+          color: white;
+          background: transparent;
+          text-shadow: none;
+        }
+      }
+    }
+
+    /**  Navbar Brand **/
+
+    .navbar-brand {
+      background: url(../../images/kavusya-logo.svg) -4.2em -7.5em no-repeat;
+      height: 10em;
+      width: 10em;
+      background-size: 184%;
+      margin: .5em 1em;
+
+      h1 {
+        color: white;
+        margin: 0;
+        font-size: 1.8em;
+        font-weight: 300;
+        padding-left: 105px;
+      }
+
+      span.subhead {
+        display: block;
+        font-size: .6em;
+        font-weight: 300;
+      }
+    }
+
+    /**  Navbar Toggle **/
+    .navbar-toggle {
+      background-color: @main-color1;
+
+      .icon-bar {
+        background-color: @main-color2;
+      }
+    }
+  }
+
+  /**  nav inbody **/
+
+  .inbody {
+    background: rgba(71, 90, 97,.8);
+  }
+
+  .navbar.inbody {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .navbar-nav {
+      padding-top: 10px;
+    }
+
+    .navbar-brand {
+      background: url(../../images/kavusya-logo.svg) -3em -5.3em no-repeat;
+      height: 7em;
+      width: 7em;
+      background-size: 184%;
+      margin: .5em 1em;
+
+      h1 {
+        font-size: 1.1em;
+        padding-left: 38px;
+      }
+
+      span.subhead {
+        display: none;
+      }
+    }
+  }
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: white;
+  background-color: transparent;
+}
+
+
+/**  Navbar Toggle **/
+
+@media only screen
+and (max-width: 768px) {
+  header .navbar-collapse.in {
+    background-color: rgba(0,0,0, .5);
+  }
+}
+
+/**  Carousel Fade **/
+
+.carousel {
+  height: 100vh;
+  background-color: #1B7998;
+
+  &.fade {
+    opacity: 1;
+
+    .item {
+      transition: opacity ease-out .7s;
+      left: 0;
+      opacity: 0;
+      top: 0;
+      position: absolute;
+      display: block;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      width: 100%;
+      height: 100vh;
+
+      &:first-child {
+        top: auto;
+        opacity: 0;
+        position: relative;
+      }
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.carousel-control {
+  opacity: 0;
+
+  &.left,
+  &.right
+  {
+    background-image: none;
+  }
+
+}
+
+
+
+/**  Page **/
+.page {
+  padding: 40px 0;
+  font-size: 1.7rem;
+  line-height:100%;
+}
+
+.page-headline {
+  font-size: 2.5em;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.page-description {
+  font-size: 1.1em;
+  line-height: 120%;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#adoption {
+
+  background-color: @main-color1;
+
+  .col-xs-1,
+  .col-sm-1,
+  .col-md-1,
+  .col-lg-1,
+  .col-xs-2,
+  .col-sm-2,
+  .col-md-2,
+  .col-lg-2,
+  .col-xs-3,
+  .col-sm-3,
+  .col-md-3,
+  .col-lg-3,
+  .col-xs-4,
+  .col-sm-4,  .col-md-4,  .col-lg-4,  .col-xs-5,  .col-sm-5,  .col-md-5,  .col-lg-5,  .col-xs-6,  .col-sm-6,  .col-md-6,  .col-lg-6,  .col-xs-7,  .col-sm-7,  .col-md-7,  .col-lg-7,  .col-xs-8,  .col-sm-8,  .col-md-8,  .col-lg-8,  .col-xs-9,  .col-sm-9,  .col-md-9,  .col-lg-9,  .col-xs-10,  .col-sm-10,  .col-md-10,  .col-lg-10,  .col-xs-11,  .col-sm-11,  .col-md-11,  .col-lg-11,  .col-xs-12,  .col-sm-12,  .col-md-12,  .col-lg-12 {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  p {
+    color: @main-color2;
+  }
+
+  .page-headline {
+    color: @main-color2;
+  }
+
+  img {
+    width: 100%;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+}
+
+#appointments {
+  line-height:100%;
+  background: @main-color2;
+
+  .page-headline {
+    color: @main-color1;
+  }
+
+  .appointment {
+    border-bottom: 1px solid hsl(38, 24%, 67%);
+    cursor: pointer;
+    margin-top: 0;
+    padding: 15px 0 15px 15px;
+
+    &:hover {
+      background: hsl(38, 24%, 77%);
+    }
+  }
+
+  .appointment-img {
+    width: 100px;
+  }
+
+  .appointment-heading {
+    font-size: 1.6em;
+    color: @main-color1;
+  }
+
+  .appointment-breed {
+    color: @main-color1;
+    font-size: .6em;
+    font-weight: 600;
+  }
+
+  .appointment-owner-title {
+    font-weight: 600;
+    color: rgba(0,0,0,.6);
+  }
+
+  .appointment-owner-name {
+    font-weight: 300;
+    color: rgba(0,0,0,.5);
+    font-size: .95em;
+    font-style: italic;
+  }
+
+  .appointment-reason {
+    margin-top: 5px;
+    font-size: .85em;
+    font-style: italic;
+  }
+
+  .col-xs-1, #appointments .col-sm-1,  .col-md-1, #appointments .col-lg-1,  .col-xs-2, #appointments .col-sm-2,  .col-md-2, #appointments .col-lg-2,  .col-xs-3, #appointments .col-sm-3,  .col-md-3, #appointments .col-lg-3,  .col-xs-4, #appointments .col-sm-4,  .col-md-4, #appointments .col-lg-4,  .col-xs-5, #appointments .col-sm-5,  .col-md-5, #appointments .col-lg-5,  .col-xs-6, #appointments .col-sm-6,  .col-md-6, #appointments .col-lg-6,  .col-xs-7, #appointments .col-sm-7,  .col-md-7, #appointments .col-lg-7,  .col-xs-8, #appointments .col-sm-8,  .col-md-8, #appointments .col-lg-8,  .col-xs-9, #appointments .col-sm-9,  .col-md-9, #appointments .col-lg-9,  .col-xs-10,  .col-sm-10,  .col-md-10,  .col-lg-10,  .col-xs-11,  .col-sm-11,  .col-md-11,  .col-lg-11,  .col-xs-12,  .col-sm-12,  .col-md-12,  .col-lg-12 {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+
+.modal {
+  height: 100vh;
+}
+
+.modal-dialog {
+  width: 90%;
+  margin: 30px auto;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-petname {
+  color: hsl(10, 79%, 48%);
+}
+
+.modal-petbreed {
+  font-size: .7em;
+}
+
+.modal-content img{
+  width: 100%;
+}
+
+.modal-content p {
+  font-size: .8em;
+  padding: 15px;
+}
+
+.list-group-item img {
+  width: 100px;
+}
+
+.loader {
+  background-color: rgba(27, 121, 152,.9);
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loader-text {
+  font-size: 1em;
+  color: white;
+  text-shadow: 1px 1px 4px black;
+}
+
+.progress {
+  width: 40%;
+  max-width: 200px;
+}
+
+.reloadbtn {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.reloadbtn-lg {
+  width: 50px;
+  height: 50px;
+  display: none;
+  float: right;
+  padding: 9px 10px 9px 0;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .reloadbtn {
+    display: none;
+  }
+
+  .reloadbtn-lg {
+    display:inline;
+  }
+}
