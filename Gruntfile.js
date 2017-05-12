@@ -13,7 +13,11 @@ module.exports = function(grunt) {
         watch: {
             js: {
                 files: ['app/js/app.js'],
-                tasks: ['browserify', 'concat_css']
+                tasks: ['browserify']
+            },
+            css: {
+                files: "app/less/*.less",
+                tasks: ["less"]
             }
         },
         browserify: {

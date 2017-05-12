@@ -282,11 +282,11 @@ header .inbody .navbar-brand span.subhead {
   padding: 0;
 }
 
-.modal-petname {
+.modal-coffeename {
   color: hsl(10, 79%, 48%);
 }
 
-.modal-petbreed {
+.modal-coffeebreed {
   font-size: .7em;
 }
 

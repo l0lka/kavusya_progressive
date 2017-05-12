@@ -14,18 +14,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <meta name="apple-mobile-web-app-title" content="Wisdom Pet">
+    <meta name="apple-mobile-web-app-title" content="Wisdom coffee">
     <meta name="apple-touch-icon" content="images/icons/icon-152x152.png">
 
     <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
     <meta name="msapplication-TileColor" content="#2F3BA2">
-
-    <style>
-        .page, #slideshow {
-            height: 100vh;
-            background: gray;
-        }
-    </style>
 
 </head>
 <body>
@@ -57,8 +50,8 @@
                     <ul class="nav navbar-nav navbar-right">
 
                         <li role="presentation" class="active"><a href="#slideshow">Slideshow</a></li>
-                        <li role="presentation"><a href="#adoption">Adoption</a></li>
-                        <li role="presentation"><a href="#appointments">Appointments</a></li>
+                        <li role="presentation"><a href="#specials">specials</a></li>
+                        <li role="presentation"><a href="#appointments">Assortment</a></li>
 
                     </ul>
                 </div>
@@ -70,9 +63,9 @@
             <div class="carousel-inner">
                 {{#each slideshow}}
                 {{#if @first}}
-                <div class="item active"><img src="images/pets/{{filename}}.jpg" alt="{{pet}} photo"></div>
+                <div class="item active"><img src="images/slides/{{filename}}.jpg" alt="{{coffee}} photo"></div>
                 {{else}}
-                <div class="item"><img src="images/pets/{{filename}}.jpg" alt="{{pet}} photo"></div>
+                <div class="item"><img src="images/slides/{{filename}}.jpg" alt="{{coffee}} photo"></div>
                 {{/if}}
                 {{/each}}
             </div><!--carousel inner -->
@@ -84,42 +77,71 @@
 
     </div>
     <main>
-        <div class="page" id="adoption">
+        <!-- page about -->
+
+        <div class="page about" id="about">
             <div class="container">
-                <h2 class="page-headline">
-                    Adoptions
-                </h2>
+                <div class="container">
+                    <h2><em>Завiтайте</em>до Кавусi</h2>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <!--<div class="img img__border"><div class="lazy-img" style="padding-bottom: 63.0282%;"><img data-src="images/page-1_img01.jpg" alt=""></div></div>-->
+                            <p class="center indents-1">
+                                Кавуся - це зовсім крихітна кав’ярня, фактично продовження парадного. Ми знаємо наших клієнтів, та робимо каву саме так, я вони люблять.
+                                Ми як добрі сусіди, до яких приємно забігти за келихом смачної кави та гарним настроєм перед початком робочого дня.
+                            </p>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <!--<div class="img img__border"><div class="lazy-img" style="padding-bottom: 63.0282%;"><img data-src="images/page-1_img02.jpg" alt=""></div></div>-->
+                            <p class="center indents-1">
+                                Ми дуже піклуємося про якість нашої кави. Каву нам обжарюють перед доставкою до кав’ярні. Ми замовляємо невеличкими упаковкамі, та піклуємся, щоб на протязі дня кава готувалася лише зі свіжозмелених  зерен. Нашу кавомашину привезено для нас з Италії, а воду ми використовуємо лише з арезіанського джерела. Тому наша кава така смачна.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="decoration"><!--<a href="#" class="btn">Read more</a>--></div>
+            </div>
+            </div>
+            <!-- container -->
+        </div>
+        <!-- page about -->
+
+        <div class="page specials" id="specials">
+            <div class="container">
+                <h2><em>Свято капучино</em>в Кавусi</h2>
                 <p>Some text by topic. Click on photo for more information.</p>
-                <script id="adoption-template" type="text/x-handlebars-template">
-                    {{#each adoption}}
-                        <div class="col-md-2 col-sm-3 col-xs-4 openpetmodal" data-toggle="modal" data-target="#wisdompetmodal" data-petname="{{pet}}" data-petbreed="{{breed}}" data-petowner="{{owner}}" data-petinfo="{{description}}" data-petimage="{{filename}}">
-                            <img class="img-circle" src="images/pets/{{filename}}_tn.jpg" alt="{{pet}} photo">
+                <script id="specials-template" type="text/x-handlebars-template">
+                    {{#each specials}}
+                        <div class="col-md-2 col-sm-3 col-xs-4 opencoffeemodal" data-toggle="modal" data-target="#wisdomcoffeemodal" data-coffeename="{{coffee}}" data-coffeebreed="{{breed}}" data-coffeeowner="{{owner}}" data-coffeeinfo="{{description}}" data-coffeeimage="{{filename}}">
+                            <img class="img-circle" src="images/menu/{{filename}}_tn.png" alt="{{coffee}} photo">
                             <!-- column -->
                         </div>
                     {{/each}}
                 </script>
-                <div id="adoption-content"></div>
+                <div id="specials-content"></div>
 
             </div>
             <!-- container -->
         </div>
-        <!-- page adoption -->
+        <!-- page specials -->
 
-        <div class="page" id="appointments">
+        <div class="page assortment" id="appointments">
             <div class="container">
                 <h2 class="page-headline">
-                    Appointments
+                    Ассортимент
                 </h2>
+
+
                 <p>Some text by topic. Click on photo for more information.</p>
 
                 <script id="appointments-template" type="text/x-handlebars-template">
                     {{#each appointments}}
-                        <div class="appointment media openpetmodal"  data-toggle="modal" data-target="#wisdompetmodal" data-petname="{{pet}}" data-petbreed="{{breed}}" data-petowner="{{owner}}" data-petinfo="{{reason}}" data-petimage="{{filename}}">
+                        <div class="appointment media opencoffeemodal"  data-toggle="modal" data-target="#wisdomcoffeemodal" data-coffeename="{{coffee}}" data-coffeebreed="{{breed}}" data-coffeeowner="{{owner}}" data-coffeeinfo="{{reason}}" data-coffeeimage="{{filename}}">
                             <div class="media-left media-top">
-                                <img src="images/pets/{{filename}}_tn.jpg" alt="{{pet}} photo" class="media-object appointment-img img-rounded">
+                                <img src="images/menu/{{filename}}_tn.jpg" alt="{{coffee}} photo" class="media-object appointment-img img-rounded">
                             </div> <!-- media left media top -->
                             <div class="media-body">
-                                <h3 class="media-heading appointment-heading">{{pet}}, <span class="appointment-breed">{{breed}}</span></h3>
+                                <h3 class="media-heading appointment-heading">{{coffee}}, <span class="appointment-breed">{{breed}}</span></h3>
                                 <div class="appointment-owner"><span class="appointment-owner-title">Owner: </span>
                                 <span class="appointment-owner-name">{{owner}}</span>
                                 </div>
@@ -136,25 +158,201 @@
             </div>
             <!-- container -->
         </div>
-        <!-- page appointments -->
 
+        <!-- page special -->
+
+        <div class="page about parallax parallax1" id="about" data-parallax-speed="-0.4">
+            <div class="container">
+                <h2><em>Наша</em>кава</h2>
+
+                <div class="row">
+                    <div class="grid_6">
+                        <p class="center indents-1">
+                            <span class="styled">Гондурас</span> - невеличка країна, що знаходиться у
+                            пiвнiчнiй частинi Центральної Америки.
+                            Тропiчний клiмат, родюча, низької кислотності грунт вулканічного походження, збагачена органічними елементами і мінералами,
+                            дозволяють вирощувати каву високої якості з прекрасними смаковими характеристиками і чудовим ароматом.
+
+                        </p>
+                    </div>
+                    <div class="grid_6">
+                        <p class="center indents-1">
+                            <span class="styled">Кава Гондурас </span> -
+                            це кращі сорти Арабіки, вирощені на плантаціях, розташованих на схилах гір вулканічного походження. В умовах високогір'я, більш ніж 1500 метрів над рівнем моря, кавові дерева ростуть повільніше, але кавові зерна набувають більш вишукані смак і аромат.
+                        </p>
+                    </div>
+                </div>
+                <!--<p class="indents-2">Ми розробили власне меню. Наші напої  гарні, різноманітні та смачні.  У нас все зрозуміло та демократично. </p>-->
+                <!--<a href="#" class="btn">View full menu</a>-->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- page special -->
+
+        <!-- page special -->
+
+        <div class="page prices" id="prices">
+            <table class="prices">
+                <tbody><tr>
+                    <td class="item"></td>
+                    <td class="sm"><div class="small-cup"></div></td>
+                    <td class="m"><div class="medium-cup"></div></td>
+                    <td class="l"><div class="large-cup"></div></td>
+                </tr>
+                <tr class="menu-row">
+                    <td class="item">Еспресо</td>
+                    <td class="sm">10</td>
+                    <td class="m"></td>
+                    <td class="l"></td>
+                </tr>
+                <tr class="menu-row">
+                    <td class="item">Подвiйне еспресо</td>
+                    <td class="sm">19</td>
+                    <td class="m"></td>
+                    <td class="l"></td>
+                </tr>
+                <tr class="menu-row">
+                    <td class="item">Еспресо з молоко</td>
+                    <td class="sm">12</td>
+                    <td class="m"></td>
+                    <td class="l"></td>
+                </tr>
+                <tr class="menu-row">
+                    <td class="item">Американо</td>
+                    <td class="sm"></td>
+                    <td class="m">10</td>
+                    <td class="l"></td>
+                </tr>
+                <tr class="menu-row">
+                    <td class="item">Капучино</td>
+                    <td class="sm"></td>
+                    <td class="m">14</td>
+                    <td class="l">18</td>
+                </tr>
+                <tr class="menu-row">
+
+                    <td class="item">Капучино вiд кавусi</td>
+                    <td class="sm"></td>
+                    <td class="m">18</td>
+                    <td class="l">21</td>
+                </tr>
+                <tr class="menu-row">
+                    <td class="item">Лате</td>
+                    <td class="sm"></td>
+                    <td class="m">14</td>
+                    <td class="l">18</td>
+                </tr>
+                <tr>
+                    <td class="item"></td><td class="sm"></td><td class="m"></td><td class="l"></td>
+                </tr>
+                <tr class="menu-row">
+                    <td class="item">Горячий шоколад</td>
+                    <td class="sm"></td>
+                    <td class="m">14</td>
+                    <td class="l">18</td>
+                </tr>
+                <tr>
+                    <td class="item"></td><td class="sm"></td><td class="m"></td><td class="l"></td>
+                </tr>
+                <tr class="menu-row">
+                    <td class="item">Молоко</td><td class="sm">4</td><td class="m"></td><td class="l"></td>
+                </tr>
+                <tr class="menu-row">
+                    <td class="item">Сироп</td><td class="sm">4</td><td class="m"></td><td class="l"></td>
+                </tr>
+                <tr class="menu-row">
+                    <td class="item">Мед</td><td class="sm">4</td><td class="m"></td><td class="l"></td>
+                </tr>
+                </tbody></table>
+            <!-- container -->
+        </div>
+        <!-- page prices -->
+
+        <!-- page rules -->
+
+        <div class="page rules" id="rules">
+            <div class="container">
+                <div class="center">
+                    <h2><em>Нашi </em>правила:</h2>
+
+
+                    <div class="explanations">
+                        <div class="explanation-item">
+                            Ми використовуємо <br>
+                            тiлькi<span class="bigger"> 100% Арабiку, </span><br>
+                            що обжарюється<br>
+                            безпосереднью перед
+                            доставкою до нас
+
+                        </div>
+                        <div class="division"></div>
+                        <div class="explanation-item">
+                            Ми використовуємо<br>
+                            тiльки <span class="bigger">артезiанську воду</span><br>
+
+                            для приготування кави
+
+                        </div>
+                        <div class="division"></div>
+                        <div class="explanation-item">
+                            Наша кавомашина привезена<br>
+                            з Iталi ,<br>
+                            кра ни, де якiсть приготування еспресо<br>
+                            на першому мiсцi
+
+
+                        </div>
+                        <div class="division"></div>
+                        <div class="explanation-item">
+                            Ми маємо сертифiкат якостi на нашу каву
+
+                        </div>
+
+
+
+                    </div>
+
+
+                    <!--<p class="indents-2">Fnteger convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol. sed,pharetra venenatis nulla. Vestibulum volutpat turpis ut massa commodo, quis aliquam massa facilisis.Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol.</p>
+                    <address class="address-1">
+                        <dl><dt>Address:</dt> <dd>4578 Marmora Road, Glasgow DA04 89GR</dd></dl>
+                        <p><em>800 2345-6789</em></p>
+                    </address>-->
+                </div>
+            </div>
+            <!-- container -->
+        </div>
+        <!-- page rules -->
 
     </main>
+    <footer>
+        <div class="container">
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/%D0%9A%D0%B0%D0%B2%D1%83%D1%81%D1%8F-712640975536072/" class="fa fa-facebook">f</a></li>
+                <!--<li><a href="#" class="fa fa-tumblr"></a></li>
+                <li><a href="#" class="fa fa-google-plus"></a></li>-->
+            </ul>
+            <!--<div class="copyright">© <span id="copyright-year"></span> |
+                <a href="#">Privacy Policy</a>
+            </div>-->
+        </div>
+        <!--<div class="tm"><a href="#"><img src="images/TM_logo.png" alt=""></a></div>-->
+    </footer>
 
-    <div class="modal fade" id="wisdompetmodal" tabindex="-1" role="dialog" area-labelledby="petModal">
+    <div class="modal fade" id="wisdomcoffeemodal" tabindex="-1" role="dialog" area-labelledby="coffeeModal">
         <div class="modal-dialog" data-dismiss="modal" area-lable="Close" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button class="close" type="button" data-dismiss="modal" area-label="Close" role="document">
                         <span aria-hidden="true">&times</span>
                     </button>
-                    <h2 class="modal-title modal-petname"></h2>
-                    <div class="modal-petbreed"></div>
+                    <h2 class="modal-title modal-coffeename"></h2>
+                    <div class="modal-coffeebreed"></div>
                 </div>
                 <!-- modal-header -->
                 <div class="modal-body">
-                    <img class="img-responsive modal-petimage">
-                    <p class="modal-petinfo"></p>
+                    <img class="img-responsive modal-coffeeimage">
+                    <p class="modal-coffeeinfo"></p>
                 </div>
             </div>
             <!-- modal-content -->

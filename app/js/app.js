@@ -1,31 +1,34 @@
 var $ = jQuery = require('jquery');
-require('./bootstrap_custom');
 var Handlebars = require('handlebars');
+
+require('./bootstrap_custom');
 
 $(function() {
     var topoffset = 50;
 
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker
-            .register('../../build/sw.js')
-            .then(function(){
-                console.log('Service Worker Active');
-            })
-    }
+    console.log('READY!!');
 
-    $.getJSON('../../data/pets.json', function(data){
+    // if ('serviceWorker' in navigator) {
+    //     navigator.serviceWorker
+    //         .register('../../build/sw.js')
+    //         .then(function(){
+    //             console.log('Service Worker Active');
+    //         })
+    // }
+
+    $.getJSON('../data/coffee.json', function(data){
         $('.loader').fadeOut(1000);
         var slideshowTemplate = $('#slideshow-template').html();
         var slideshowScript = Handlebars.compile(slideshowTemplate);
 
-        var adoptionTemplate = $('#adoption-template').html();
+        var adoptionTemplate = $('#specials-template').html();
         var adoptionScript = Handlebars.compile(adoptionTemplate);
 
         var appointmentTemplate = $('#appointments-template').html();
         var appointmentScript = Handlebars.compile(appointmentTemplate);
 
         $('#slideshow-content').append(slideshowScript(data));
-        $('#adoption-content').append(adoptionScript(data));
+        $('#specials-content').append(adoptionScript(data));
         $('#appointments-content').append(appointmentScript(data));
 
         //Replace IMG inside carousels with background image
@@ -42,13 +45,14 @@ $(function() {
         })
     });
 
-    $(document).on('click', '.openpetmodal', function () {
-        $('.modal-petname').html($(this).data('petname'));
-        $('.modal-petbreed').html($(this).data('petbreed'));
-        $('.modal-petowner').html($(this).data('petowner'));
-        $('.modal-petinfo').html($(this).data('petinfo'));
-        $('.modal-petimage').attr('src', 'images/pets/' + $(this).data('petimage') + '.jpg');
-        $('.modal-petimage').attr('alt', $(this).data('petimage') + ' photo');
+
+    $(document).on('click', '.opencoffeemodal', function () {
+        $('.modal-coffeename').html($(this).data('coffeename'));
+        $('.modal-coffeebreed').html($(this).data('coffeebreed'));
+        $('.modal-coffeeowner').html($(this).data('coffeeowner'));
+        $('.modal-coffeeinfo').html($(this).data('coffeeinfo'));
+        $('.modal-coffeeimage').attr('src', 'images/menu/' + $(this).data('coffeeimage') + '.jpg');
+        $('.modal-coffeeimage').attr('alt', $(this).data('coffeeimage') + ' photo');
     });
 
     $('.navbar-fixed-top').on('activate.bs.scrollspy', function () {
@@ -82,5 +86,8 @@ $(function() {
         target: 'header .navbar',
         offset: topoffset
 
-    })
+    });
 });
+
+
+
