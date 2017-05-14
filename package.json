@@ -8,9 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/planetoftheweb/progressive.git"
+    "url": "https://bitbucket.org/svetlana_khmel/progressive-web"
   },
-  "author": "Ray Villalobos",
+  "author": "Svitlana Khmel",
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-browserify": "^5.0.0",

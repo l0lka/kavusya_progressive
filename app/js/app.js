@@ -2,17 +2,19 @@ var $ = jQuery = require('jquery');
 var Handlebars = require('handlebars');
 
 require('./bootstrap_custom');
+require('./jquery.stellar');
+
 
 $(function() {
     var topoffset = 50;
 
-    // if ('serviceWorker' in navigator) {
-    //     navigator.serviceWorker
-    //         .register('../../build/sw.js')
-    //         .then(function(){
-    //             console.log('Service Worker Active');
-    //         })
-    // }
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('../../build/sw.js')
+            .then(function(){
+                console.log('Service Worker Active');
+            })
+    }
 
     $.getJSON('../data/coffee.json', function(data){
         $('.loader').fadeOut(1000);
@@ -42,7 +44,6 @@ $(function() {
             pause: false
         })
     });
-
 
     $(document).on('click', '.opencoffeemodal', function () {
         $('.modal-coffeename').html($(this).data('coffeename'));
@@ -83,8 +84,13 @@ $(function() {
     $('body').scrollspy({
         target: 'header .navbar',
         offset: topoffset
-
     });
+
+    // $.stellar({
+    //     horizontalScrolling: false,
+    //     verticalOffset: 40
+    // });
+
 });
 
 
