@@ -48,26 +48,27 @@
                 </div>
                 <div class="collapse navbar-collapse" id="collapse">
                     <ul class="nav navbar-nav navbar-right">
-
                         <li role="presentation" class="active"><a href="#slideshow">Slideshow</a></li>
-                        <li role="presentation"><a href="#specials">specials</a></li>
-                        <li role="presentation"><a href="#appointments">Assortment</a></li>
-
+                        <li role="presentation"><a href="#specials">Пропозициї</a></li>
+                        <li role="presentation"><a href="#appointments">Асортімент</a></li>
+                        <li role="presentation"><a href="#coffee">Кава</a></li>
+                        <li role="presentation"><a href="#rules">Правила</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+    <img class="kavusya-logo" src="images/kavusya-logo.svg">
     <script id="slideshow-template" type="text/x-handlebars-template">
         <div class="carousel fade" data-ride="carousel" id="slideshow">
             <div class="carousel-inner">
-                {{#each slideshow}}
-                {{#if @first}}
+                    {{#each slideshow}}
+                        {{#if @first}}
                 <div class="item active"><img src="images/slides/{{filename}}.jpg" alt="{{coffee}} photo"></div>
-                {{else}}
+                        {{else}}
                 <div class="item"><img src="images/slides/{{filename}}.jpg" alt="{{coffee}} photo"></div>
-                {{/if}}
-                {{/each}}
+                        {{/if}}
+                    {{/each}}
             </div><!--carousel inner -->
             <a class="left carousel-control" href="#slideshow" role="button" data-slide="prev"></a>
             <a class="right carousel-control" href="#slideshow" role="button" data-slide="next"></a>
@@ -78,7 +79,6 @@
     </div>
     <main>
         <!-- page about -->
-
         <div class="page about" id="about">
             <div class="container">
                 <div class="container">
@@ -95,7 +95,6 @@
                             <!--<div class="img img__border"><div class="lazy-img" style="padding-bottom: 63.0282%;"><img data-src="images/page-1_img02.jpg" alt=""></div></div>-->
                             <p class="center indents-1">
                                 Ми дуже піклуємося про якість нашої кави. Каву нам обжарюють перед доставкою до кав’ярні. Ми замовляємо невеличкими упаковкамі, та піклуємся, щоб на протязі дня кава готувалася лише зі свіжозмелених  зерен. Нашу кавомашину привезено для нас з Италії, а воду ми використовуємо лише з арезіанського джерела. Тому наша кава така смачна.
-
                             </p>
                         </div>
                     </div>
@@ -109,7 +108,7 @@
         <div class="page specials" id="specials">
             <div class="container">
                 <h2><em>Свято капучино</em>в Кавусi</h2>
-                <p>Some text by topic. Click on photo for more information.</p>
+                <!--<p>Some text by topic. Click on photo for more information.</p>-->
                 <script id="specials-template" type="text/x-handlebars-template">
                     {{#each specials}}
                         <div class="col-md-2 col-sm-3 col-xs-4 opencoffeemodal" data-toggle="modal" data-target="#wisdomcoffeemodal" data-coffeename="{{coffee}}" data-coffeebreed="{{breed}}" data-coffeeowner="{{owner}}" data-coffeeinfo="{{description}}" data-coffeeimage="{{filename}}">
@@ -131,17 +130,16 @@
                     Ассортимент
                 </h2>
 
-
-                <p>Some text by topic. Click on photo for more information.</p>
+                <!--<p>Some text by topic. Click on photo for more information.</p>-->
 
                 <script id="appointments-template" type="text/x-handlebars-template">
                     {{#each appointments}}
                         <div class="appointment media opencoffeemodal"  data-toggle="modal" data-target="#wisdomcoffeemodal" data-coffeename="{{coffee}}" data-coffeebreed="{{breed}}" data-coffeeowner="{{owner}}" data-coffeeinfo="{{reason}}" data-coffeeimage="{{filename}}">
-                            <div class="media-left media-top">
-                                <img src="images/menu/{{filename}}_tn.jpg" alt="{{coffee}} photo" class="media-object appointment-img img-rounded">
+                            <div class="custom-media-head">
+                                <img src="images/menu/{{filename}}_tn.png" alt="{{coffee}} photo" class="media-object appointment-img img-rounded">
                             </div> <!-- media left media top -->
-                            <div class="media-body">
-                                <h3 class="media-heading appointment-heading">{{coffee}}, <span class="appointment-breed">{{breed}}</span></h3>
+                            <div class="custom-media-body">
+                                <h3 class="media-heading">{{coffee}}, <span class="appointment-breed">{{breed}}</span></h3>
                                 <div class="appointment-owner"><span class="appointment-owner-title">Owner: </span>
                                 <span class="appointment-owner-name">{{owner}}</span>
                                 </div>
@@ -161,7 +159,7 @@
 
         <!-- page special -->
 
-        <div class="page about parallax parallax1" id="about" data-parallax-speed="-0.4">
+        <div class="page about parallax parallax1 skrollable skrollable-between" id="coffee" data-0="background-position:0px 0px;" data-100000="background-position:0px -500px>
             <div class="container">
                 <h2><em>Наша</em>кава</h2>
 
@@ -191,139 +189,215 @@
 
         <!-- page special -->
 
-        <div class="page prices" id="prices">
-            <table class="prices">
-                <tbody><tr>
-                    <td class="item"></td>
-                    <td class="sm"><div class="small-cup"></div></td>
-                    <td class="m"><div class="medium-cup"></div></td>
-                    <td class="l"><div class="large-cup"></div></td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="item">Еспресо</td>
-                    <td class="sm">10</td>
-                    <td class="m"></td>
-                    <td class="l"></td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="item">Подвiйне еспресо</td>
-                    <td class="sm">19</td>
-                    <td class="m"></td>
-                    <td class="l"></td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="item">Еспресо з молоко</td>
-                    <td class="sm">12</td>
-                    <td class="m"></td>
-                    <td class="l"></td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="item">Американо</td>
-                    <td class="sm"></td>
-                    <td class="m">10</td>
-                    <td class="l"></td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="item">Капучино</td>
-                    <td class="sm"></td>
-                    <td class="m">14</td>
-                    <td class="l">18</td>
-                </tr>
-                <tr class="menu-row">
+        <div class="prices">
+            <div class="prices-box">
+                <div class="menu-row">
+                    <div class="size-nominal">
+                        <div class="small-cup"></div>
+                        <div class="medium-cup"></div>
+                        <div class="large-cup"></div>
+                    </div>
+                </div>
 
-                    <td class="item">Капучино вiд кавусi</td>
-                    <td class="sm"></td>
-                    <td class="m">18</td>
-                    <td class="l">21</td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="item">Лате</td>
-                    <td class="sm"></td>
-                    <td class="m">14</td>
-                    <td class="l">18</td>
-                </tr>
-                <tr>
-                    <td class="item"></td><td class="sm"></td><td class="m"></td><td class="l"></td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="item">Горячий шоколад</td>
-                    <td class="sm"></td>
-                    <td class="m">14</td>
-                    <td class="l">18</td>
-                </tr>
-                <tr>
-                    <td class="item"></td><td class="sm"></td><td class="m"></td><td class="l"></td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="item">Молоко</td><td class="sm">4</td><td class="m"></td><td class="l"></td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="item">Сироп</td><td class="sm">4</td><td class="m"></td><td class="l"></td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="item">Мед</td><td class="sm">4</td><td class="m"></td><td class="l"></td>
-                </tr>
-                </tbody></table>
-            <!-- container -->
+                <div class="row">
+                    <div class="name">Еспресо</div>
+                    <div class="price-row">
+                        <div class="size">
+                            <div class="sm">s</div>
+                            <div class="md">m</div>
+                            <div class="xl">l</div>
+                        </div>
+                        <div class="size-price">
+                            <div class="sm">10</div>
+                            <div class="md"></div>
+                            <div class="xl"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="name">Подвiйне еспресо</div>
+                    <div class="price-row">
+                        <div class="size">
+                            <div class="sm">s</div>
+                            <div class="md">m</div>
+                            <div class="xl">l</div>
+                        </div>
+                        <div class="size-price">
+                            <div class="sm">19</div>
+                            <div class="md"></div>
+                            <div class="xl"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="name">Еспресо з молоком</div>
+                    <div class="price-row">
+                        <div class="size">
+                            <div class="sm">s</div>
+                            <div class="md">m</div>
+                            <div class="xl">l</div>
+                        </div>
+                        <div class="size-price">
+                            <div class="sm">12</div>
+                            <div class="md"></div>
+                            <div class="xl"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="name">Американо</div>
+                    <div class="price-row">
+                        <div class="size">
+                            <div class="sm">s</div>
+                            <div class="md">m</div>
+                            <div class="xl">l</div>
+                        </div>
+                        <div class="size-price">
+                            <div class="sm"></div>
+                            <div class="md">10</div>
+                            <div class="xl"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="name">Капучино</div>
+                    <div class="price-row">
+                        <div class="size">
+                            <div class="sm">s</div>
+                            <div class="md">m</div>
+                            <div class="xl">l</div>
+                        </div>
+                        <div class="size-price">
+                            <div class="sm"></div>
+                            <div class="md">14</div>
+                            <div class="xl">18</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="name">Капучино вiд кавусi</div>
+                    <div class="price-row">
+                        <div class="size">
+                            <div class="sm">s</div>
+                            <div class="md">m</div>
+                            <div class="xl">l</div>
+                        </div>
+                        <div class="size-price">
+                            <div class="sm"></div>
+                            <div class="md">18</div>
+                            <div class="xl">21</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="name">Лате</div>
+                    <div class="price-row">
+                        <div class="size">
+                            <div class="sm">s</div>
+                            <div class="md">m</div>
+                            <div class="xl">l</div>
+                        </div>
+                        <div class="size-price">
+                            <div class="sm"></div>
+                            <div class="md">14</div>
+                            <div class="xl">18</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="name">Горячий шоколад</div>
+                    <div class="price-row">
+                        <div class="size">
+                            <div class="sm">s</div>
+                            <div class="md">m</div>
+                            <div class="xl">l</div>
+                        </div>
+                        <div class="size-price">
+                            <div class="sm"></div>
+                            <div class="md">14</div>
+                            <div class="xl">18</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="name">Молоко</div>
+                    <div class="price-row">
+                        <div class="size-price">
+                            <div class="sm">4</div>
+                            <div class="md"></div>
+                            <div class="xl"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="name">Сироп</div>
+                    <div class="price-row">
+                        <div class="size-price">
+                            <div class="sm">4</div>
+                            <div class="md"></div>
+                            <div class="xl"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="name">Мед</div>
+                    <div class="price-row">
+                        <div class="size-price">
+                            <div class="sm">4</div>
+                            <div class="md"></div>
+                            <div class="xl"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- page prices -->
 
         <!-- page rules -->
 
         <div class="page rules" id="rules">
-            <div class="container">
-                <div class="center">
-                    <h2><em>Нашi </em>правила:</h2>
+            <div class="explanations">
+                <div class="explanation-item">
+                    Ми використовуємо <br>
+                    тiлькi<span class="bigger"> 100% Арабiку, </span><br>
+                    що обжарюється<br>
+                    безпосереднью перед
+                    доставкою до нас
 
+                </div>
+                <div class="division"></div>
+                <div class="explanation-item">
+                    Ми використовуємо<br>
+                    тiльки <span class="bigger">артезiанську воду</span><br>
 
-                    <div class="explanations">
-                        <div class="explanation-item">
-                            Ми використовуємо <br>
-                            тiлькi<span class="bigger"> 100% Арабiку, </span><br>
-                            що обжарюється<br>
-                            безпосереднью перед
-                            доставкою до нас
+                    для приготування кави
 
-                        </div>
-                        <div class="division"></div>
-                        <div class="explanation-item">
-                            Ми використовуємо<br>
-                            тiльки <span class="bigger">артезiанську воду</span><br>
-
-                            для приготування кави
-
-                        </div>
-                        <div class="division"></div>
-                        <div class="explanation-item">
-                            Наша кавомашина привезена<br>
-                            з Iталi ,<br>
-                            кра ни, де якiсть приготування еспресо<br>
-                            на першому мiсцi
-
-
-                        </div>
-                        <div class="division"></div>
-                        <div class="explanation-item">
-                            Ми маємо сертифiкат якостi на нашу каву
-
-                        </div>
-
-
-
-                    </div>
-
-
-                    <!--<p class="indents-2">Fnteger convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol. sed,pharetra venenatis nulla. Vestibulum volutpat turpis ut massa commodo, quis aliquam massa facilisis.Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol.</p>
-                    <address class="address-1">
-                        <dl><dt>Address:</dt> <dd>4578 Marmora Road, Glasgow DA04 89GR</dd></dl>
-                        <p><em>800 2345-6789</em></p>
-                    </address>-->
+                </div>
+                <div class="division"></div>
+                <div class="explanation-item">
+                    Наша кавомашина привезена<br>
+                    з Iталi ,<br>
+                    кра ни, де якiсть приготування еспресо<br>
+                    на першому мiсцi
+                </div>
+                <div class="division"></div>
+                <div class="explanation-item">
+                    Ми маємо сертифiкат якостi на нашу каву
                 </div>
             </div>
             <!-- container -->
         </div>
         <!-- page rules -->
-
     </main>
     <footer>
         <div class="container">
@@ -360,7 +434,6 @@
         <!-- modal-dialog -->
     </div>
     <!-- modal-fade -->
-
 
     <script src="build/bundle.js"></script>
 </body>

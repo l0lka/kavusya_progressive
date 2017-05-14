@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster&amp;subset=cyrillic');
 
 @import "_variables";
+@import "_footer";
 @import "_parallax";
-
 
 /**  Basic Page CSS **/
 body {
@@ -65,7 +65,8 @@ h2 {
   }
 
   &.prices,
-  &.rules {
+  &.rules,
+  &.assortment {
     min-height: 100vh;
     height: auto;
   }
@@ -79,6 +80,29 @@ h2 {
     width: 100%;
     cursor: pointer;
   }
+}
+
+/**  Navbar **/
+.navbar-default {
+  background-color: #ffffff;
+  border-color: #e7e7e7;
+  font-family: 'Lobster', cursive;
+}
+
+.kavusya-logo {
+  width: 350px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 100;
+  top: 50vh;
+}
+
+.logo {
+  height: 100vh;
+  background: url("../../images/kavusya-logo.svg") center center no-repeat;
+  border: 1px solid red;
 }
 
 /**  Carousel Fade **/
@@ -160,51 +184,90 @@ h2 {
   font-size: 1.8em;
   font-family: @fnt-2;
   line-height: 1.5em;
+  margin: 0 1em;
+  padding: 1em;
 
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 
-  width: 100%;
+  .size-nominal {
+    display: table;
+    text-align: right;
+  }
+  .size {
+    text-align: right;
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 
-  tr {
+    -webkit-flex-flow: row wrap;
+  }
+  .price-row {
+    text-align: right;
+    float: right;
+    width: 30%;
 
-    .item {
-      padding-left: .5em;
+  }
+  .sm, .md, .xl {
+    width: 30%;
+    font-size: .5em;
+    text-align: center;
+    font-family:@fnt-1;
+  }
+  .size-price {
+    text-align: right;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+
+    .sm, .md, .xl {
+      font-size: 0.7em;
+      font-family:@fnt-2;
     }
+  }
+  .name {
+    width: 70%;
+    float: left;
+  }
+  .small-cup {
+    background: url("../../images/sprites.png") 0 2px no-repeat;
+    width: 60px;
+    height: 114px;
+    display: table-cell;
+  }
 
-    &.menu-row {
-      background: url("../../images/dot_bottom.png") 0 8px repeat-x;
-    }
+  .medium-cup {
+    background: url("../../images/sprites.png") -104px 2px no-repeat;
+    width: 70px;
+    height: 114px;
+    display: table-cell;
+  }
 
-    td {
-
-      .small-cup {
-        background: url("../../images/sprites.png") 0 2px no-repeat;
-        width: 60px;
-        height: 114px;
-      }
-
-      .medium-cup {
-        background: url("../../images/sprites.png") -104px 2px no-repeat;
-        width: 70px;
-        height: 114px;
-      }
-
-      .large-cup {
-        background: url("../../images/sprites.png") -228px 2px no-repeat;
-        width: 70px;
-        height: 114px;
-      }
-
-      &.sm,
-      &.m,
-      &.l {
-        font-size: 40px;
-        width: 100px;
-      }
-
-    }
+  .large-cup {
+    background: url("../../images/sprites.png") -228px 2px no-repeat;
+    width: 70px;
+    height: 114px;
+    display: table-cell;
+  }
+  .menu-row {
+    display: table;
+    width: 100%;
+    clear: both;
+  }
+  .name {
+    background: url("../../images/dot_bottom.png") 0 -.7em repeat-x;
+    width: 100%;
+  }
+  .size-nominal {
+    float: right;
   }
 }
 
@@ -266,3 +329,36 @@ h2 {
     background: #6c6860;
   }
 }
+
+.img-rounded {
+  border-radius: 50em;
+}
+
+.custom-media-head {
+  float: left;
+  margin-right: 2em;
+
+  img {
+    cursor: pointer;
+  }
+}
+
+.custom-media-body {
+  text-align: left;
+}
+
+
+@media (max-width: 767px) {
+  .custom-media-head {
+    float: none;
+
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  .custom-media-body {
+    text-align: center;
+  }
+}
+

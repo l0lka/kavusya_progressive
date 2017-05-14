@@ -6,8 +6,6 @@ require('./bootstrap_custom');
 $(function() {
     var topoffset = 50;
 
-    console.log('READY!!');
-
     // if ('serviceWorker' in navigator) {
     //     navigator.serviceWorker
     //         .register('../../build/sw.js')
