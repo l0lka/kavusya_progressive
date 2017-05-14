@@ -9,6 +9,8 @@
 body {
   font-family: @fnt-1;
   font-size: @fnt-2;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -96,7 +98,10 @@ h2 {
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   z-index: 100;
-  top: 50vh;
+  top: 20vh;
+  transition: all 2s;
+
+  @media (max-width: 767px) {  width: 50%; }
 }
 
 .logo {
@@ -362,3 +367,17 @@ h2 {
   }
 }
 
+
+/**  Covering bootstrap  **/
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+
+  .navbar-header,
+  .navbar-collapse {
+    margin: 0;
+  }
+}
